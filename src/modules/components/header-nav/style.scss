@@ -1,0 +1,32 @@
+@import './../../../styles/mixins.scss';
+
+.header-nav {
+    // position: fixed;
+    // top: 0;
+    width: 100%;
+    background-color: $main-color;
+    padding: 24px;
+    .header-enter-exit {
+        display: flex;
+        justify-content: flex-end;
+        button {
+            width: 100%;
+            max-width: 150px;
+            height: 48px;
+            border-radius: 24px;
+            font-size: 16px;
+            color: $bth-color;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+        button:last-child {
+            margin-left: 24px;
+        }
+       
+        .wrap {
+            width: 100%;
+            text-align: end;
+        }
+    }
+} 

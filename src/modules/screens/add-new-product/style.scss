@@ -1,0 +1,28 @@
+@import './../../../styles/mixins.scss';
+
+.product-new-page {
+    display: flex;
+    height: 100%;
+    .pd-new-wrapper {
+        @include displayFlex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0px 24px;
+        h3 {
+            margin-bottom: 16px;
+        }
+        .form-conteiner {
+            @include flex-col;
+            width: 100%;
+            max-width: 350px;
+            input {
+                padding: 8px;
+                margin-bottom: 12px;
+            }
+            button {
+                padding: 8px;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,130 @@
+@import './../../../styles/mixins.scss';
+
+.product-list-page {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    width: 100%;
+    height: auto;
+    padding: 24px;
+    position: relative;
+    .pd-list-wrapper {
+        @include flex-col;
+        justify-content: space-between;
+        border: 1px solid rgba(0,0,0,.1);
+        box-sizing: border-box;
+        border-radius: 5px;
+        width: calc(100% - 10px);
+        margin: 5px;
+        position: relative;
+        line-height: 1.5;
+        &:hover {
+            box-shadow: 0 0 5px 0 rgb(0 0 0 / 30%);
+        }
+        img {
+            min-width: 200px;
+            max-width: 4000px;
+            width: 100%;
+            height: 265px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 5px 5px 0px 0px;
+        }
+        .title-product {
+            font-size: 18px;
+        }
+        .pd-info {
+            padding: 15px;
+            font-weight: 300;
+            line-height: 20px;
+            font-size: 15px;
+            color: #000;
+            white-space: pre-wrap;
+            overflow: auto;
+            word-break: break-all;
+            .price-sale {
+                font-weight: bold;
+                color: $sale-price;
+                font-size: 24px;
+            }
+            .discount {
+                @include displayFlex;
+                position: absolute;
+                color: $light-color;
+                background: $sale-color;
+                height: 34px;
+                padding: 5px 15px;
+                border-radius: 4px 4px 4px 0;
+                top: 6px;
+                right: 6px;
+            }
+            .price-cross-out {
+                text-decoration: line-through;
+                color: #999;
+                font-size: 14px;
+            }
+        }
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+    .options-panel {
+        display: inline-flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        a {
+            text-decoration: none;
+            width: 45%;
+            button {
+                @include displayFlex;
+                height: fit-content;
+                padding: 10px;
+                outline: none;
+                border: 1px solid $main-color;
+                border-radius: 35px;
+                font-size: 15px;
+                cursor: pointer;
+                width: 100%;
+            }
+        }
+        .btn-delete {
+            @include displayFlex;
+            height: fit-content;
+            padding: 10px;
+            outline: none;
+            border: 1px solid $main-color;
+            border-radius: 35px;
+            font-size: 15px;
+            cursor: pointer;
+            width: 45%;
+        }
+    }
+    .to-newProdPage {
+        margin: 24px;
+        .img-to-page {
+            width: 50px;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .product-list-page {
+        height: auto;
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-list-page {
+        height: auto;
+        display: block;
+        padding: 12px;
+        .to-newProdPage {
+            .img-to-page {
+                margin-top: 12px;
+            }
+        }
+    }
+}
