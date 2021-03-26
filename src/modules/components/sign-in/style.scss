@@ -1,0 +1,34 @@
+@import './../../../styles/mixins.scss';
+
+.sign-in-form {
+    @include flex-col;
+    .input-inf, .submit-sign-in {
+        flex: 1 0 auto;
+        margin: 0;
+        outline: 0;
+        overflow: hidden;
+        padding: 9px 0 7px 8px;
+        text-overflow: ellipsis;
+        font-family: "Century-Gothic-Regular";
+        font-size: 14px;
+    }
+    .input-inf {
+        margin-bottom: 8px;
+    }
+    .submit-sign-in {
+        margin-top: 8px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .input-feedback {
+        font-size: 12px;
+        color: mediumvioletred;
+        line-height: 16px;
+    }
+    
+}
+.auth-errors {
+    color: $errors;
+    margin-top: 24px;
+    font-family: "Century-Gothic-Regular";
+}

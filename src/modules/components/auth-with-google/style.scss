@@ -1,0 +1,23 @@
+@import './../../../styles/mixins.scss';
+
+.btn-auth {
+    @include displayFlex;
+    width: 100%;
+    height: fit-content;
+    padding: 8px;
+    outline: none;
+    border: 1px solid $main-color;
+    border-radius: 35px;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+    .logo-google {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+    span {
+        font-family: "Century-Gothic-Regular";
+        font-size: 16px;
+    }
+}
