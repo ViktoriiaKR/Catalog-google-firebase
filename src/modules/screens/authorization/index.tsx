@@ -1,22 +1,23 @@
-import React, { useContext } from 'react';
-import { Context } from '../../..';
-import firebase from 'firebase';
+import React from 'react';
+import AuthInvitation from '../../components/auth-invitation';
+import AuthGoogle from '../../components/auth-with-google';
+import SignInForm from '../../components/sign-in';
 import './style.scss';
 
 const Authorization = () => {
-    const {auth} = useContext(Context);
-
-    const authorization = async () => {
-        const provider = new firebase.auth.GoogleAuthProvider()
-        await auth.signInWithPopup(provider)
-    };
 
     return (
         <main className='authorization-page'>
-            <button onClick={authorization} className='btn-auth'>
-                <img src={require('./../../../styles/assets/images/logo-google.png')} alt='' className='' />
-                <span>Войти с помощью google</span>
-            </button>
+            <div className='auth-sign-in'>
+                <SignInForm />
+                <p className='auth-another-way'>или с помощью:</p>
+                <AuthGoogle />
+                <AuthInvitation 
+                    account={'Нет аккаунта?'}
+                    path={'/sign-up'}
+                    text={'Зарегистрируйтесь'}
+                />
+            </div>
         </main>
     )
 }
